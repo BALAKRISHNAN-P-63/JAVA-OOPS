@@ -1,0 +1,19 @@
+class Box {
+    double w, h, d;
+
+    // Parameterized Constructor
+    Box(double a, double b, double c) {
+        w = a;
+        h = b;
+        d = c;
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box myBox = new Box(5, 10, 15);  // Creating object with parameters
+    }
+}
+#OUTPUT
+The values of w, h, and d are: 5.0, 10.0, 15.0
