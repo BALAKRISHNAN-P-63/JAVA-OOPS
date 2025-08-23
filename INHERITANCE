@@ -1,0 +1,23 @@
+class Name1 {
+    void set() {
+        System.out.println("This is a Superclass");
+    }
+}
+
+class Name2 extends Name1 {
+    void get() {
+        System.out.println("This is a Subclass");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Name2 obj = new Name2();
+
+        obj.get();  // Calls subclass method
+        obj.set();  // Inherited method from superclass
+    }
+}
+#OUTPUT
+This is a Subclass
+This is a Superclass
