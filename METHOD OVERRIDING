@@ -1,0 +1,29 @@
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        a.sound();  // Calls Animal's sound()
+
+        Dog d = new Dog();
+        d.sound();  // Calls Dog's overridden sound()
+
+        Animal ref = new Dog();
+        ref.sound();  
+    }
+}
+#OUTPUT
+Animal makes a sound
+Dog barks
+Dog barks
