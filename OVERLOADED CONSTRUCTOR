@@ -1,0 +1,42 @@
+class Box {
+    double w, h, d;
+
+    // Default constructor
+    Box() {
+        w = h = d = 0;
+        System.out.println("Default constructor called.");
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+
+    // Parameterized constructor
+    Box(double a, double b, double c) {
+        w = a;
+        h = b;
+        d = c;
+        System.out.println("Parameterized constructor called.");
+        System.out.println("The values of w, h, and d are: " + w + ", " + h + ", " + d);
+    }
+
+    // Static factory method for cube
+    static Box cube(double side) {
+        Box b = new Box(side, side, side);
+        System.out.println("Cube constructor called.");
+        return b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box box1 = new Box();             // Default constructor
+        Box box2 = new Box(5, 10, 15);    // Parameterized constructor
+        Box box3 = Box.cube(7);           // Cube constructor via static method
+    }
+}
+#OUTPUT
+Default constructor called.
+The values of w, h, and d are: 0.0, 0.0, 0.0
+Parameterized constructor called.
+The values of w, h, and d are: 5.0, 10.0, 15.0
+Parameterized constructor called.
+The values of w, h, and d are: 7.0, 7.0, 7.0
+Cube constructor called.
