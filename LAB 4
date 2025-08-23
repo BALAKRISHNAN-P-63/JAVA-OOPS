@@ -1,0 +1,52 @@
+public class Car {
+    // Attributes
+    private String model;
+    private String color;
+
+    // Constructor
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    // Method to start the car
+    public void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println(model + " car started");
+        }
+    }
+
+    // Method to stop the car
+    public void stop() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car stopped");
+        } else {
+            System.out.println(model + " car stopped");
+        }
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        // TC1
+        Car car1 = new Car("Tesla", "Red");
+        car1.start(); // Output: Tesla car started
+
+        // TC2
+        Car car2 = new Car("BMW", "Black");
+        car2.start(); // Output: BMW car started
+
+        // TC3
+        Car car3 = new Car("", "Blue");
+        car3.start(); // Output: Car started
+
+        // TC4
+        Car car4 = new Car("Audi", "White");
+        // start() not called → Output: Nothing
+    }
+}
+#OUTPUT
+Tesla car started
+BMW car started
+Car started
