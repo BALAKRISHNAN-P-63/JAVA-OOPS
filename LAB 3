@@ -1,0 +1,41 @@
+public class FibonacciRecursion {
+
+    // Recursive method to calculate nth Fibonacci number
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void printFibonacciSequence(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+        System.out.println(); // Move to next line after printing sequence
+    }
+
+    public static void main(String[] args) {
+        // Test cases
+        System.out.print("TC1: n = 5 → Output: ");
+        printFibonacciSequence(5);
+
+        System.out.print("TC2: n = 7 → Output: ");
+        printFibonacciSequence(7);
+
+        System.out.print("TC3: n = 1 → Output: ");
+        printFibonacciSequence(1);
+
+        System.out.print("TC4: n = 0 → Output: ");
+        printFibonacciSequence(0);
+
+        System.out.print("TC5: n = 10 → Output: ");
+        printFibonacciSequence(10);
+    }
+}
+#OUTPUT
+TC1: n = 5 ? Output: 0 1 1 2 3 
+TC2: n = 7 ? Output: 0 1 1 2 3 5 8 
+TC3: n = 1 ? Output: 0 
+TC4: n = 0 ? Output: 
+TC5: n = 10 ? Output: 0 1 1 2 3 5 8 13 21 34 
