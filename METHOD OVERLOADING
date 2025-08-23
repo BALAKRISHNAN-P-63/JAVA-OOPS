@@ -1,0 +1,47 @@
+class A {
+    int a;
+    String name, S;
+
+    // Method 1: Set single integer
+    void set(int a) {
+        this.a = a;
+        System.out.println("The value of a is " + a);
+    }
+
+    // Method 2: Set integer and name
+    void set(int a, String name) {
+        this.a = a;
+        this.name = name;
+        System.out.println("The value of a is " + a + ", name is " + name);
+    }
+
+    // Method 3: Set two strings
+    void set(String name, String S) {
+        this.name = name;
+        this.S = S;
+        System.out.println("The value of name and S is " + name + ", " + S);
+    }
+
+    public static void main(String[] args) {
+        A obj = new A();
+
+        obj.set("SAME", "SKY");   // Calls method with two strings
+        obj.set(9, "SKY");        // Calls method with int and string
+        obj.set(8);               // Calls method with single int
+    }
+}
+#OUTPUT
+The value of name and S is SAME, SKY
+The value of a is 9, name is SKY
+The value of a is 8
+
+
+
+
+
+
+
+
+
+
+
