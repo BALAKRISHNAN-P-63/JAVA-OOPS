@@ -1,0 +1,58 @@
+*# default access modifier
+class Ab {
+     int a = 10;
+    void display() {
+        System.out.println("The value of a is " + a);
+    }
+    public static void main(String[] args) {
+        Ab obj = new Ab();
+        obj.display();
+    }
+}
+# output
+The value of a is 10
+
+
+#private access modifier
+class Ab {
+     int a = 10;
+    private void display() {
+        System.out.println("The value of a is " + a);
+    }
+    public static void main(String[] args) {
+        Ab obj = new Ab();
+        obj.display();
+    }
+}
+# output
+The value of a is 10
+
+# public access modifier
+class Ab {
+    public int a;
+    void display() {
+        System.out.println("The value of a is " + a);
+    }
+    public static void main(String[] args) {
+        Ab obj = new Ab();
+        obj.a = 10;  
+        obj.display();
+    }
+}
+# output
+The value of a is 10
+
+#protected access modifier
+class Ab {
+    protected int a=10;
+    void display() {
+        System.out.println("The value of a is " + a);
+    }
+    public static void main(String[] args) {
+        Ab obj = new Ab();
+        obj.display();
+    }
+}
+
+#output
+The value of a is 10
