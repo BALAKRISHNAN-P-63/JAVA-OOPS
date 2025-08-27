@@ -1,0 +1,61 @@
+// Base class
+class Shape {
+    public double area() {
+        System.out.println("Default area");
+        return 0.0;
+    }
+}
+
+// Derived class: Circle
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Derived class: Rectangle
+class Rectangle extends Shape {
+    private double width, height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double area() {
+        return width * height;
+    }
+}
+
+// Main class to test
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Shape[] shapes = {
+            new Circle(5),           // TC1
+            new Rectangle(10, 5),    // TC2
+            new Shape(),             // TC3
+            new Circle(0),           // TC4
+            new Rectangle(0, 10)     // TC5
+        };
+
+        for (int i = 0; i < shapes.length; i++) {
+            double result = shapes[i].area();
+            System.out.printf("TC%d: Area = %.2f%n", i + 1, result);
+        }
+    }
+}
+#OUTPUT
+TC1: Area = 78.54
+TC2: Area = 50.00
+Default area
+TC3: Area = 0.00
+TC4: Area = 0.00
+TC5: Area = 0.00
