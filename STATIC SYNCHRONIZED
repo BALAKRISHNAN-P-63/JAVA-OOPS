@@ -1,0 +1,46 @@
+class TableStatic {
+    // static synchronized method
+    synchronized static void printTable(int n) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(n * i);
+            try {
+                Thread.sleep(400); // slows it down to observe thread behavior
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+class MyThread5 extends Thread {
+    public void run() {
+        TableStatic.printTable(5);
+    }
+}
+
+class MyThread6 extends Thread {
+    public void run() {
+        TableStatic.printTable(100);
+    }
+}
+
+public class StaticSyncDemo {
+    public static void main(String[] args) {
+        MyThread5 t1 = new MyThread5();
+        MyThread6 t2 = new MyThread6();
+        t1.start();
+        t2.start();
+    }
+}
+
+#OUTPUT
+5
+10
+15
+20
+25
+100
+200
+300
+400
+500
